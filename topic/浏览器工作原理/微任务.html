@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="btn">微任务</div>
+  <script>
+    window.onload = function(){
+      var btn = document.querySelector(".btn")
+      btn.addEventListener("click", function(){
+        console.log(`click1`)
+        Promise.resolve().then(() => {
+          console.log(`click proimise1`)
+        })
+      })
+      btn.addEventListener("click", function(){
+        console.log(`click2`)
+        Promise.resolve().then(() => {
+          console.log(`click proimise2`)
+        })
+      })
+      btn.click()
+    }
+  </script>
+</body>
+</html>

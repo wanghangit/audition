@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .demo{
+      height: 10000px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo">
+
+  </div>
+  <script>
+    /**触发高频事件后n秒内函数只会执行一次，如果n秒内高频事件再次被触发，则重新计算时间 */
+    window.onload = function() {
+      function say(){
+        console.log("scroll")
+      }
+      function debounce(fn){
+        var time
+        return function(){
+          clearTimeout(time)
+          time = setTimeout(fn, 100)
+        }
+      }
+      window.addEventListener("scroll", debounce(say))
+    }
+  </script>
+</body>
+</html>

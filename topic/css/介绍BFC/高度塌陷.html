@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .parent {
+      overflow:hidden;
+    }
+    .float {
+        float:left;
+    }
+  </style>
+</head>
+<body>
+  <!-- BFC解决高度塌陷问题第5条 -->
+  <div class='parent'>
+      <div class='float'>浮动元素</div>
+  </div>
+</body>
+</html>
