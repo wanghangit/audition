@@ -1,0 +1,25 @@
+{
+  "name": "audition",
+  "version": "1.0.0",
+  "description": "知识点的一些总结",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wanghangit/audition.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wanghangit/audition/issues"
+  },
+  "homepage": "https://github.com/wanghangit/audition#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browserify": "^16.5.0"
+  }
+}
