@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<!-- 浏览器遇到js会阻塞文档解析从而第二个元素没被修改并且报错了 -->
+<body>
+  <div>1</div>
+  <script>
+  let div1 = document.getElementsByTagName('div')[0]
+  div1.innerText = 'render'
+
+  let div2 = document.getElementsByTagName('div')[1]
+  div2.innerText = 'render2'
+  </script>
+  <div>test</div>
+  <script>
+    document.addEventListener("DOMContentLoaded",function(){
+      console.log(`"DOMContentLoaded"`)
+    })
+    console.log('script')
+  </script>
+</body>
+</html>

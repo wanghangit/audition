@@ -8,8 +8,16 @@ function nextId(){
   return uid++
 }
 
+function noop(){}
+
+function isFunction(fnc){
+  return Object.prototype.toString.call(fnc) === "[object Function]"
+}
+
 module.exports = {
   warn,
   nextId,
-  PROMISE_ID
+  PROMISE_ID,
+  noop,
+  isFunction
 }

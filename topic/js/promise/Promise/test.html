@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./MyPromise.js"></script>
+  <script>
+    window.onload = function(){
+      const p1 = new MyPromise(function(resolve, reject){
+        resolve(2)
+      })
+      // p1.then((v) => {
+      //   console.log(v)
+      //   return 3
+      // }).then((v) => {
+      //   console.log(v)
+      // })
+      p1.then().then(v => console.log(v))
+    }
+  </script>
+</body>
+</html>

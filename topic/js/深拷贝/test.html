@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./util.js"></script>
+  <script src="./deepclone1.js"></script>
+  <script src="./deepclone2.js"></script>
+  <script src="./deepclone3.js"></script>
+
+  <script>
+    var a = {
+      name: "muyiy",
+      book: {
+        title: "You Don't Know JS",
+        price: "45"
+      },
+      a1: undefined,
+      a2: null,
+      a3: 123
+    }
+    a.cc = a
+    var clone1 = deep2(a)
+    console.log(clone1)
+    // 相同引用测试
+    var b = {
+      b1: a,
+      b2: a
+    }
+    var clone2 = deep2(b)
+    console.log(clone2.b1 === clone2.b2)
+    const testData = createData(10000,10)
+    var clone3 = deep2(testData)
+    console.log(clone3)
+  </script>
+</body>
+
+</html>
