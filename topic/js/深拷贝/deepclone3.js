@@ -3,6 +3,7 @@ function deep3(source) {
   if (!isObject(source)) {
     return source;
   }
+  // 采用弱引用，可以保证在下一次垃圾回收时map可以被回收省去了手动回收的过程
   const map = new WeakMap();
   // 初始化拷贝对象
   if (isArray(source)) {

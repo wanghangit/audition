@@ -11,3 +11,24 @@ var p2 = p1.then((v) => {
   // })
 })
 // var p3 = p2.then((v) => console.log(`p2${v}`))
+
+new MyPromise((resolve, reject) => {
+  console.log("promise1");
+  resolve();
+})
+  .then(() => {
+    console.log("then11");
+    return new MyPromise((resolve, reject) => {
+      console.log("promise2");
+      resolve();
+    })
+      .then(() => {
+        console.log("then21");
+      })
+      .then(() => {
+        console.log("then22");
+      });
+  })
+  .then(() => {
+    console.log("then12");
+  });

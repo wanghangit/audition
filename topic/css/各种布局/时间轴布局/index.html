@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .list{
+      width: 100%;
+    }
+    .item{
+      padding-left: 40px;
+      position: relative;
+      padding-bottom: 20px;
+    }
+    .item:last-child::before{
+      top: 0px;
+    }
+    .item::before{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 5px;
+      left: 18px;
+      width: 1px;
+      height: 100%;
+      border-left: 1px solid #333333;
+    }
+    .item::after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 5px;
+      left: 15px;
+      width: 7px;
+      height: 7px;
+      background: royalblue;
+    }
+    .content{
+      background: burlywood;
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="list">
+    <div class="item">
+      <div class="content">
+        <div class="time">2019.10.22</div>
+        <div class="title">[0] 打雷啦下雨啦</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="content">
+        <div class="time">2019.10.22</div>
+        <div class="title">[0] 打雷啦下雨啦</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="content">
+        <div class="time">2019.10.22</div>
+        <div class="title">[0] 打雷啦下雨啦</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="content">
+        <div class="time">2019.10.22</div>
+        <div class="title">[0] 打雷啦下雨啦</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="content">
+        <div class="time">2019.10.22</div>
+        <div class="title">[0] 打雷啦下雨啦</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 
