@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 200px;
+      height: 200px;
+      background: yellowgreen;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <p class="box box1"></p>
+    </div>
+  </div>
+  <script src="./zepto.js"></script>
+  <!-- <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script> -->
+  <script>
+    window.onload = function () {
+      document.getElementsByClassName('wrapper')[0].addEventListener('click', function (e) {
+        console.log(e.currentTarget)
+        e.stopPropagation()
+        console.log('box')
+        return false
+        // console.log(e.target.tagName)
+        // if(e.target.tagName === 'P'){
+
+        // }
+      })
+      document.getElementsByClassName('wrapper')[0].addEventListener('click', function (e) {
+        console.log(e.currentTarget, e.target, e.target.classList)
+        console.log('container')
+      })
+      // $(document).on('click', '.container',function(e){
+      //   console.log(e.currentTarget, e.target, e.target.classList)
+      //   console.log('container')
+      // })
+      // $(document).on('click', '.box',function(e){
+      //   e.stopPropagation()
+      //   console.log('box')
+      // })
+    }
+  </script>
+</body>
+
+</html>

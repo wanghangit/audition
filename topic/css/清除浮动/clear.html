@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      width: 100%;
+    }
+    .box{
+      float: left;
+      width: 100px;
+      height: 50px;
+      background: greenyellow;
+    }
+    .text{
+      width: 100%;
+      margin-bottom: 50px;
+    }
+    .clear::after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .clear1{
+      overflow:hidden;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container clear">
+    <div class="box"></div>
+  </div>
+  <div class="text">测试数据</div>
+  <div class="container clear1">
+    <div class="box"></div>
+  </div>
+  <div class="text">测试数据</div>
+</body>
+</html>
