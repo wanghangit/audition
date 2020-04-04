@@ -6,35 +6,49 @@
   <title>Document</title>
   <style>
     *{
-      height: 100px;
       margin: 0;
       padding: 0;
+    }
+    .wrap{
+      padding: 0 40px;
+    }
+    .wrap>div{
+      float: left;
+      position: relative;
+      height: 100px;
     }
     .middle{
       width: 100%;
       background: red;
-      float: left;
-      box-sizing: border-box;
-      padding: 0 40px;
     }
     .left{
-      float: left;
       margin-left: -100%;
       width: 40px;
+      left: -40px;
       background: yellowgreen;
     }
     .right{
-      float: left;
       margin-left: -40px;
       width: 40px;
+      left: 40px;
       background: blueviolet;
+    }
+    .text{
+      clear: both;
     }
   </style>
 </head>
+<!-- 圣杯布局 -->
+<!-- 1. 我们在wrap上设置padding 40px 保证中间部分开始和结束的位置，然后设置宽100%
+2. left我们设置margin-left: -100%,使其移动到middle最左边，然后设置left：-40px移动到屏幕最左侧
+3. right我们设置margin-left: -40px,使其移动到middle最后边再设置,left: 40px向右移动到屏幕最后测
+4. 最后还要清除浮动 -->
 <body>
   <div class="wrap">
     <div class="middle">middle</div>
-    <div class="left">left</div>
+    <div class="left">
+      left
+    </div>
     <div class="right">right</div>
   </div>
   <div class="text">圣杯布局</div>
