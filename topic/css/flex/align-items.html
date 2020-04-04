@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./base.css">
+  <style>
+    .content{
+      display: flex;
+      width: 100%;
+      height: 100px;
+      background: burlywood;
+    }
+    .item{
+      background: rgb(137, 199, 86);
+      width: 20px;
+      height: 20px;
+    }
+    .flex-start{
+      align-items: flex-start;
+    }
+    .flex-end{
+      align-items: flex-end;
+    }
+    .center{
+      align-items: center;
+    }
+    .baseline{
+      align-items: baseline;
+    }
+    .stretch{
+      align-items: stretch;
+    }
+  </style>
+</head>
+<body>
+  <h1>纵轴上的对齐方式</h1>
+  <p>靠纵轴开始端排列</p>
+  <div class="content flex-start">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+  <p>靠纵轴末端排列</p>
+  <div class="content flex-end">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+  <p>纵轴居中</p>
+  <div class="content center">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+  <p>基线对齐</p>
+  <div class="content baseline">
+    <div class="item">A</div>
+    <div class="item">11</div>
+    <div class="item">22</div>
+    <div class="item">33</div>
+    <div class="item">B</div>
+    <div class="item">D</div>
+  </div>
+  <p>默认</p>
+  <div class="content stretch">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</body>
+</html>

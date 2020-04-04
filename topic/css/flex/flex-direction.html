@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ol {
+      list-style: none;
+      display: flex;
+      width: 100%;
+      height: 100px;
+      background: burlywood;
+      margin-bottom: 30px;
+    }
+    li {
+      background: rgb(137, 199, 86);
+      width: 20px;
+      height: 20px;
+      margin: 0 10px;
+      text-align: center;
+    }
+    .row{
+      flex-direction: row;
+    }
+    .row-reverse{
+      flex-direction: row-reverse;
+    }
+    .column{
+      flex-direction: column;
+    }
+    .column-reverse{
+      flex-direction: column-reverse;
+    }
+  </style>
+</head>
+
+<body>
+  <ol class="row">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ol>
+  <ol class="row-reverse">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ol>
+  <ol class="column">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ol>
+  <ol class="column-reverse">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ol>
+</body>
+
+</html>
