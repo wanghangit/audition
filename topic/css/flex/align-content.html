@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./base.css">
+  <style>
+    .content{
+      display: flex;
+      flex-wrap: wrap;
+      width: 60px;
+      height: 100px;
+      background: burlywood;
+    }
+    .item{
+      background: rgb(137, 199, 86);
+      width: 20px;
+    }
+    .flex-start{
+      align-content: flex-start;
+    }
+    .flex-end{
+      align-content: flex-end;
+    }
+    .center{
+      align-content: center;
+    }
+    .space-between{
+      align-content: space-between;
+    }
+    .space-around{
+      align-content: space-around;
+    }
+    .space-evenly{
+      align-content: space-evenly;
+    }
+    .stretch{
+      align-content: stretch;
+    }
+  </style>
+</head>
+<body>
+  <h1>多列显示的情况下每一行的对齐方式，针对行的布局</h1>
+  <p>靠纵轴开始端排列</p>
+  <div class="content flex-start">
+    <div class="item">A</div>
+    <div class="item">11</div>
+    <div class="item">22</div>
+    <div class="item">33</div>
+    <div class="item">B</div>
+    <div class="item">D</div>
+  </div>
+  <p>靠纵轴末端排列</p>
+  <div class="content flex-end">
+    <div class="item">A</div>
+    <div class="item">11</div>
+    <div class="item">22</div>
+    <div class="item">33</div>
+    <div class="item">B</div>
+    <div class="item">D</div>
+  </div>
+  <p>纵轴居中</p>
+  <div class="content center">
+    <div class="item">A</div>
+    <div class="item">11</div>
+    <div class="item">22</div>
+    <div class="item">33</div>
+    <div class="item">B</div>
+    <div class="item">D</div>
+  </div>
+  <p>两端对齐</p>
+  <div class="content space-between">
+    <div class="item">A</div>
+    <div class="item">11</div>
+    <div class="item">22</div>
+    <div class="item">33</div>
+    <div class="item">B</div>
+    <div class="item">D</div>
+  </div>
+  <p>中间距离是两边的两倍</p>
+  <div class="content space-around">
+    <div class="item">A</div>
+    <div class="item">11</div>
+    <div class="item">22</div>
+    <div class="item">33</div>
+    <div class="item">B</div>
+    <div class="item">D</div>
+  </div>
+  <p>所有距离相等</p>
+  <div class="content space-evenly">
+    <div class="item">A</div>
+    <div class="item">11</div>
+    <div class="item">22</div>
+    <div class="item">33</div>
+    <div class="item">B</div>
+    <div class="item">D</div>
+  </div>
+  <p>如果未设置高度默认值拉伸高度</p>
+  <div class="content stretch">
+    <div class="item">A</div>
+    <div class="item">11</div>
+    <div class="item">22</div>
+    <div class="item">33</div>
+    <div class="item">B</div>
+    <div class="item">D</div>
+  </div>
+</body>
+</html>
