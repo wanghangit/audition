@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import ELForm from '../components/el-form/Form.vue'
+import ELForm from '../components/el-form/FormTest.vue'
 
 console.log(Vue)
 
