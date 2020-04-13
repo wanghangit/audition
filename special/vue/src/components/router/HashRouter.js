@@ -1,0 +1,5 @@
+class HashRouter{
+  constructor(options){
+    
+  }
+}
