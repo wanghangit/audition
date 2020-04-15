@@ -18,13 +18,12 @@ class VueRouter{
   constructor(options){
     // 缓存配置
     this.$options = options
-    const mode = options.mode || 'hash'
- 
-    if(mode === 'hash'){
-      this.router = new HashRouter()
-    }else{
-      this.router = new HistoryRouter()
-    }
+    this.mode = options.mode || 'hash'
+    // if(mode === 'hash'){
+    //   this.router = new HashRouter()
+    // }else{
+    //   this.router = new HistoryRouter()
+    // }
     // 保存路由配置
     this.routeMap = {}
     // 创建响应式对象
@@ -43,8 +42,17 @@ class VueRouter{
     this.initComponent()
   }
   bindEvents(){
-    window.addEventListener("hashchange", this.onhashchange.bind(this))
-    window.addEventListener("load", this.onhashchange.bind(this))
+    if(this.mode === 'hash'){
+      window.addEventListener("hashchange", this.onhashchange.bind(this))
+      window.addEventListener("load", this.onhashchange.bind(this))
+    }else{
+      window.addEventListener("popstate", this.onstatechange.bind(this))
+      window.addEventListener("load", this.onstatechange.bind(this))
+    }
+  }
+  onstatechange(e){
+    console.log(window.location.pathname)
+    this.app.current = window.location.pathname
   }
   onhashchange(e){
     console.log(window.location.hash.slice(1))
@@ -74,7 +82,7 @@ class VueRouter{
         }
       },
       render(h) {
-        return h('a', {attrs: {href: '#'+this.to}}, this.$slots.default)
+        return h('a', {attrs: {href: 'router.html'+this.to}}, this.$slots.default)
       },
     })
     Vue.component("router-view", {
@@ -84,7 +92,7 @@ class VueRouter{
         }
       },
       render: (h) => {
-        const Comp = this.routeMap[this.app.current].component
+        const Comp = this.routeMap[this.app.current.replace("router.html")].component
         return h(Comp) 
       },
     })

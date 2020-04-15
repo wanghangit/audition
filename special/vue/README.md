@@ -30,3 +30,8 @@
 2. slot具名插槽 v-slot:name <template name="name">
 3. 作用域插槽 v-slot:name="slotProps" <template name="name" data="slotData"> 可以子元素给父元素传值
 
+## Vuex
+
+1. mutations是修改state的唯一途径,原则上只支持同步修改
+1. actions可以触发异步操作，返回的是一个被Promise包裹的方法
+
