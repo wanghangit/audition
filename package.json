@@ -23,6 +23,7 @@
     "browserify": "^16.5.0"
   },
   "dependencies": {
+    "amfe-flexible": "^2.2.1",
     "fs-extra": "^8.1.0",
     "multiparty": "^4.2.1"
   }
