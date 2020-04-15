@@ -1,6 +1,5 @@
 import { hot } from 'react-hot-loader/root'
 import React, { Component } from 'react'
-import Child from './Child'
 
 class App extends Component{
   constructor(){
@@ -8,7 +7,7 @@ class App extends Component{
   }
   render(){
     return <>
-      <Child></Child>
+      
     </>
   }
 }

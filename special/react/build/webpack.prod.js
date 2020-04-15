@@ -6,11 +6,18 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const { entrys, pages} = require('./config')
+
+const copyEntry = Object.assign({}, entrys)
+// for (const key in copyEntry) {
+//   if (copyEntry.hasOwnProperty(key)) {
+//     const element = copyEntry[key];
+//     copyEntry[key] = ['react-hot-loader/patch', copyEntry[key]]
+//   }
+// }
+copyEntry.vendor = ['react', 'react-dom']
 module.exports = webpackMerge.smart(baseConfig, {
-  entry: {
-    app: path.resolve(__dirname, "../src/index.js"),
-    vendor: ['react', 'react-dom'] // 不变的代码分包
-  },
+  entry: copyEntry,
   mode: "production",
   module: {
     rules: [
@@ -39,7 +46,7 @@ module.exports = webpackMerge.smart(baseConfig, {
       filename: 'css/[name].css'
       // chunkFilename: '[name].[contenthash:8].chunk.css'
     }),
-  ],
+  ].concat(pages),
   optimization: {
     minimizer: [
       new OptimizeCSSAssetsPlugin(),

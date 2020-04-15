@@ -37,8 +37,10 @@ module.exports = webpackMerge(base, {
                 '@babel/preset-react',  // jsx支持
                 ['@babel/preset-env', { useBuiltIns: 'usage', corejs: 2 }] // 按需使用polyfill
               ],
+              plugins: ["@babel/plugin-proposal-class-properties"],
               cacheDirectory: true // 加快编译速度
-            }
+            },
+            
           },
         ]
       },
