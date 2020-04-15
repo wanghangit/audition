@@ -16,7 +16,7 @@ fileNames.forEach(file => {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./src/index.html"),
       filename: item+'.html',
-      chunks: [item]
+      chunks: [item],
     })
   )
 });
@@ -32,7 +32,7 @@ module.exports = {
     library: '[name]'
   },
   devServer: {
-    port: 8000,
+    port: 8088,
   },
   mode: 'development',
   devtool: "cheap-module-eval-source-map",

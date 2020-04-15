@@ -5,18 +5,19 @@ import List from '../components/router/List'
 import Detail from '../components/router/Detail'
 
 import Router from '../components/router/router'
+import Test from '../components/router/test'
 
 Vue.use(Router)
 const router = new Router({
-  mode: 'hash',
+  mode: 'history',
   routes: [{
     path: '/',
     component: Home,
     children: [{
-      path: '/list',
+      path: 'list',
       component: List
     }, {
-      path: '/detail/:id',
+      path: 'detail/:id',
       component: Detail
     }]
   }, {
@@ -24,3 +25,9 @@ const router = new Router({
     component: About
   }]
 })
+
+new Vue({
+  router,
+  el: '#root',
+  render: (h) => h(Test)
+}).$mount()
