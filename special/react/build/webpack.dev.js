@@ -17,6 +17,7 @@ module.exports = webpackMerge(baseConfig, {
   entry: copyEntry,
   devServer: {
     port: 8000,
+    open: true,
     contentBase: path.resolve(__dirname, "../dist"),
   },
   resolve: {
