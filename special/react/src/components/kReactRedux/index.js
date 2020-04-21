@@ -1,22 +1,44 @@
-import { hot } from 'react-hot-loader/root'
-import React, { Component } from 'react'
-import ReduxTest from './ReduxTest'
-import ReactReduxTest from './ReactReduxTest'
-import { Provider } from 'react-redux'
-import store from './store'
+import React, { useEffect, useContext, useState } from 'react';
 
-class App extends Component{
-  constructor(){
-    super()
-  }
-  componentDidMount(){
+const Context = React.createContext()
 
-  }
-  render(){
-    return <Provider store={store}>
-      <ReactReduxTest></ReactReduxTest>
-    </Provider>
+export const Provider = (props) => {
+  return <Context.Provider value={props.store}>
+    {props.children}
+  </Context.Provider>
+}
+
+export const connect = (mapStateToProps=state => state, mapDispatchToProps={}) => {
+  return (Cmp) => {
+    return () => {
+      const store = useContext(Context)
+      const getProps = () => {
+        const stateProps = mapStateToProps(store.getState())
+        const dispatchProps = bindActionCreators(mapDispatchToProps, store.dispatch)
+        return {
+          ...stateProps,
+          ...dispatchProps
+        }
+      }
+      const [props, setProps] = useState(getProps())
+      console.log(props)
+      useEffect(() => {
+        store.subscribe(() => {
+          setProps({...props, ...getProps()})
+        })
+      })
+      return <Cmp {...props}/>
+    }
   }
 }
 
-export default hot(App)
+function bindActionCreators(creaters, dispatch){
+  return Object.keys(creaters).reduce((pre, cur) => {
+    pre[cur] =  bindActionCreator(creaters[cur], dispatch)
+    return pre
+  }, {})
+}
+
+function bindActionCreator(creater, dispatch){
+  return  (...args) => dispatch(creater(...args))
+}
