@@ -26,7 +26,7 @@ export const connect = (mapStateToProps=state => state, mapDispatchToProps={}) =
         store.subscribe(() => {
           setProps({...props, ...getProps()})
         })
-      })
+      }, [])
       return <Cmp {...props}/>
     }
   }
