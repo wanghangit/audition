@@ -1,0 +1,8 @@
+{
+  "name": "pwa demo",
+  "display": "standalone",
+  "icons": [{
+    "src": "./ad_see.png",
+    "size": "44x44"
+  }]
+}

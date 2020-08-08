@@ -5,7 +5,7 @@
 设置了display:flex就是一个弹性容器，如果有一个非空的文本节点就是一个匿名的弹性元素。向下边这样其实是有3个弹性元素
 
 ```html
-  <div>
+  <div style="dispaly:flex">
     <p>第一个</p>
     这也是一个
     <span>第三个</span>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function sleep(d) { // 模拟线程的占用
+      for (let i = Date.now(); Date.now() - i < d;) {}
+    }
+    const works = [
+      () => {
+        console.log('执行第1个任务')
+        sleep(200)
+        console.log('第1个任务结束')
+      },
+      () => {
+        console.log('执行第2个任务')
+        sleep(20)
+        console.log('第2个任务结束')
+      },
+      () => {
+        console.log('执行第3个任务')
+        sleep(20)
+        console.log('第3个任务结束')
+      },
+    ]
+    window.requestIdleCallback(workLoop, {
+      timeout: 1000
+    })
+    // timeRemaining返回当前帧还有多少空闲时间，didTimeout是否超时
+    function workLoop(deadline) {
+      console.log('当前帧还有:'+deadline.timeRemaining())
+      while ((deadline.timeRemaining() > 0 || deadline.didTimeout) && works.length > 0) { // 如果当前帧有空闲时间就一直执行
+        performUnitWork()
+      }
+      if(works.length>0){ // 开启一个新的任务调度
+        window.requestIdleCallback(workLoop, {
+          timeout: 1000
+        })
+      }
+    }
+    function performUnitWork() {
+      works.shift()();
+    }
+  </script>
+</body>
+
+</html>

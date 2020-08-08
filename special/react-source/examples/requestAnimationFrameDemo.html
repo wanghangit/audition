@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="bar" style="background:blueviolet;height:20px;width: 0;"></div>
+  <div id="btn">开始</div>
+  <script>
+    let bar = document.querySelector("#bar"),
+      btn = document.querySelector("#btn");
+    let start,current
+    function progress() {
+      bar.style.width = bar.offsetWidth+1+'px'
+      bar.innerHTML = bar.offsetWidth+"%";
+      if(bar.offsetWidth<100){
+        console.log(Date.now()-start) // 调用到执行时间
+        start = Date.now() 
+        requestAnimationFrame(progress)
+      }
+    }
+    btn.addEventListener("click",function(){
+      start = Date.now()
+      requestAnimationFrame(progress)
+    })
+  </script>
+</body>
+
+</html>
