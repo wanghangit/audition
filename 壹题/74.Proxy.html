@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <input type="text" id="model">
+    <p id="word"></p>
+  </div>
+  <script>
+    const model = document.getElementById("model")
+    const word = document.getElementById("word")
+    const obj = new Proxy({}, {
+      get(target,key,receiver){
+        Reflect.get(target,key,receiver)
+      },
+      set(target,key,value,receiver){
+        if(key==='text'){
+          model.value = value
+          word.innerHTML = value
+        }
+        Reflect.set(target,key,value)
+      }
+    })
+    model.addEventListener("input", function(e){
+      obj.text = e.target.value
+    })
+  </script>
+</body>
+</html>

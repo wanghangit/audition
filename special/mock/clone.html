@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./clone.js"></script>
+  <script>
+    var d = {
+      age:16
+    }
+    var e = {
+      name: "xiaoming"
+    }
+    e.__proto__ = d
+    console.log(Object.getPrototypeOf(e))
+    var a = {
+      copy: a,
+      name: "muyiy",
+      books: [{
+        title: "You Don't Know JS",
+        price: "45"
+      },{
+        title: "You Don't Know JS2",
+        price: "60"
+      }],
+      c: {
+        test1:'test1',
+        test2: 'test2'
+      },
+      e,
+      a1: undefined,
+      a2: null,
+      a3: 123
+    }
+    var clone1 = clone(a);
+    console.log(Object.is(clone1,a))
+    console.log(clone1)
+    // console.log(clone1.books === a.books)
+    // // 相同引用测试
+    // var b = {
+    //   b1: a,
+    //   b2: a
+    // }
+    // var clone2 = clone(b);
+    // console.log(clone2.b1===clone2.b2)
+  </script>
+</body>
+</html>

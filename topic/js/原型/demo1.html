@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  <script src="./demo1.js"></script>
+  <script>
+    Object.prototype.a = 'obja'
+    Object.prototype.b = 'objb'
+    Function.prototype.a = 'funa'
+    Function.prototype.b = 'funb'
+
+    var parent = function () {}
+
+    var child = new parent()
+    console.log(parent.a, parent.b) // funa , funa
+    console.log(child.a, child.b) // obja, objb
+  </script>
 </body>
+
 </html>

@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Index extends Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-      number: 0
-    }
+      number: 0,
+      counter: 0,
+    };
   }
-  componentDidMount(){
+  componentDidMount() {
     // this.setState((prevState) => {
     //   return {number:prevState.number+1}
     // })
@@ -15,15 +16,30 @@ class Index extends Component {
     //   return {number:prevState.number+1}
     // })
     this.setState({
-      number: this.state.number+1
-    })
+      number: this.state.number + 1,
+    });
     this.setState({
-      number: this.state.number+1
-    })
+      number: this.state.number + 1,
+    });
   }
-  render(){
-  return <div>{this.state.number}</div>
+  addNumber = () => {
+    this.setState({
+      number: this.state.number + 1,
+    });
+    this.setState({
+      number: this.state.number + 1,
+    });
+  }
+  render() {
+    return (
+      <div>
+        number:{this.state.number}
+        <button onClick={() => {this.state.counter = this.state.counter+1}}>add</button>
+        <button onClick={this.addNumber}>less</button>
+        <p>counter:{this.state.counter}</p>
+      </div>
+    );
   }
 }
 
-export default Index
+export default Index;
