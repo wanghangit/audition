@@ -9,7 +9,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}/topic/js/promise/MyPromise/test.js",
+      "program": "${workspaceFolder}/setSail2022/promise/myPromise/test.js",
       "skipFiles": [
         "<node_internals>/**"
       ]

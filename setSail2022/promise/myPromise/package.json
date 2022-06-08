@@ -1,15 +1,15 @@
 {
-  "name": "promise",
+  "name": "myPromise",
   "version": "1.0.0",
   "description": "",
-  "main": "MyPromise.js",
+  "main": "Promise.js",
   "scripts": {
-    "test": "promises-aplus-tests MyPromise2.js"
+    "test": "promises-aplus-tests Promise"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "promises-aplus-tests": "^2.1.2"
   }
 }
